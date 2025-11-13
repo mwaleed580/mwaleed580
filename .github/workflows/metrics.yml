@@ -7,7 +7,7 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -16,6 +16,7 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Karachi
+          config_ignore_errors: yes
 
           # --- Visual customization ---
           config_display: large
@@ -31,7 +32,7 @@ jobs:
 
           plugin_languages: yes
           plugin_languages_ignored: html, css, scss
-          plugin_languages_skipped: lowlighter/metrics
+          plugin_languages_skipped: lowlighter/metrics, mwaleed580/Eureka-Booking, mwaleed580/RepliBlocks, mwaleed580/Jobi
           plugin_languages_limit: 8
           plugin_languages_sections: most-used
           plugin_languages_colors: github
