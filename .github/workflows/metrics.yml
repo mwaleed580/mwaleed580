@@ -45,7 +45,7 @@ jobs:
           plugin_lines: yes
 
           plugin_repositories: yes
-          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate
+          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display
           plugin_repositories_order: stars, pushed
 
           plugin_stargazers: yes
