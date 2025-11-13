@@ -18,6 +18,7 @@ jobs:
 
           # --- Basic Info ---
           user: mwaleed580
+          template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Karachi
 
@@ -57,7 +58,7 @@ jobs:
 
           ## 📦 Featured Repositories
           plugin_repositories: yes
-          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display, mwaleed580/Jobi, mwaleed580/Eureka-Booking
+          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display
           plugin_repositories_order: stars, pushed
 
           ## 🌟 Stargazers
