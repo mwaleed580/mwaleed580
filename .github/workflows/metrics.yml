@@ -1,4 +1,4 @@
-name: Muhammad Waleed Profile Metrics
+name: GitHub Profile Metrics
 on:
   schedule: [{cron: "0 */12 * * *"}]  # Every 12 hours
   workflow_dispatch:                   # Allow manual runs
@@ -10,7 +10,7 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@v3.34
+      - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -45,7 +45,7 @@ jobs:
           plugin_lines: yes
 
           plugin_repositories: yes
-          plugin_repositories_featured: mwaleed580/Jobi, mwaleed580/Eureka-Booking
+          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display
           plugin_repositories_order: stars, pushed
 
           plugin_achievements: yes
