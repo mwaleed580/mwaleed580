@@ -1,1 +1,4 @@
-![Metrics](https://github.com/mwaleed580/mwaleed580/blob/main/github-metrics.svg)
+<picture>
+  <source media="(min-width: 600px)" srcset="github-metrics.svg">
+  <img src="github-metrics-mobile.svg">
+</picture>
