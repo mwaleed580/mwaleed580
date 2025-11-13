@@ -1,7 +1,9 @@
 name: GitHub Profile Metrics
+
 on:
-  schedule: [{cron: "0 */12 * * *"}] 
-  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *" # Every 12 hours
+  workflow_dispatch: # Allow manual runs
 
 permissions:
   contents: write
@@ -14,52 +16,58 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # --- Basic settings ---
+          # --- Basic Info ---
           user: mwaleed580
-          template: classic
+          template: classic-modern
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Karachi
-          config_ignore_errors: yes
 
-          # --- Visual customization ---
+          # --- Visual Customization ---
           config_display: large
           config_padding: 0, 12
-          config_order: base.header, base.repositories, base.metadata, activity, community
+          config_order: base.header, base.repositories, base.metadata, languages, activity, community
           config_twemoji: yes
-          config_animations: yes
           config_octicon: yes
+          config_animations: yes
 
           # --- Plugins ---
+
+          ## 🗓 Contribution Calendar
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
+          ## 💻 Languages (with icons)
           plugin_languages: yes
-          plugin_languages_mode: icons
-          plugin_languages_limit: 8
           plugin_languages_sections: most-used
+          plugin_languages_limit: 8
+          plugin_languages_details: bytes-size, percentage, lines, icons
           plugin_languages_colors: github
           plugin_languages_threshold: 0%
           plugin_languages_skipped: lowlighter/metrics
-          plugin_languages_recent: no
           plugin_languages_indepth: yes
           plugin_languages_aliases: yes
           plugin_languages_categories: programming, markup, data
-          plugin_languages_details: percentage, bytes-size, lines
 
+          ## 🧩 Topics (with icons)
           plugin_topics: yes
-          plugin_topics_limit: 0
+          plugin_topics_limit: 12
           plugin_topics_mode: icons
 
+          ## 📈 Lines of Code
           plugin_lines: yes
 
+          ## 📦 Featured Repositories
           plugin_repositories: yes
-          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display
+          plugin_repositories_featured: mwaleed580/wordpress-plugin-boilerplate, mwaleed580/dynamic-content-display, mwaleed580/Jobi, mwaleed580/Eureka-Booking
           plugin_repositories_order: stars, pushed
 
+          ## 🌟 Stargazers
           plugin_stargazers: yes
           plugin_stargazers_charts: yes
 
+          ## 📊 Follow-up Stats
           plugin_followup: yes
           plugin_followup_sections: repositories, user
 
+          ## 🚦 Traffic Insights
           plugin_traffic: yes
