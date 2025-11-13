@@ -18,7 +18,7 @@ jobs:
 
           # --- Basic Info ---
           user: mwaleed580
-          template: classic-modern
+          template: terminal
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Karachi
 
